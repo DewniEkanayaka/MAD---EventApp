@@ -68,5 +68,20 @@
     <string name="submit">Submit</string>
     <string name="name">Name</string>
     <string name="title_activity_add_service">AddService</string>
+    <string name="events">Events</string>
+    <string name="services">Services</string>
+    <string name="feedback">Add Feedback</string>
+    <string name="profile">Profile</string>
+    <string name="usernamed">Username</string>
+    <string name="passwordd">Password</string>
+    <string name="passconfd">Confirm Password</string>
+    <string name="logoutd">Log Out</string>
+    <string name="emaild">Email</string>
+    <string name="companyd">Company Name</string>
+    <string name="saveChangesd">Save Changes</string>
+    <string name="acceptd">Accept</string>
+    <string name="declined">Decline</string>
+    <string name="updated">Update</string>
+    <string name="deleted">Delete Account</string>
 
 </resources>
