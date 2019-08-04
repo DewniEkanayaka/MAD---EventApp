@@ -19,6 +19,11 @@ public class ServiceProviderUI extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void Services(View view){
+        Intent intent = new Intent(this, T2.class);
+        startActivity(intent);
+    }
+
     public void LogOut(View view){
         Intent intent = new Intent(this, LoginTR.class);
         startActivity(intent);
