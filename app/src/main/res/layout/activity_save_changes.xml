@@ -32,6 +32,23 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
+            android:text="CONFIRM PASSWORD"
+            android:textColor="#669999"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.169"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.784" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="117dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
             android:text="PASSWORD"
             android:textColor="#669999"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -59,19 +76,18 @@
             app:layout_constraintVertical_bias="0.472" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btnSave"
             android:layout_width="185dp"
             android:layout_height="48dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/button_update"
-            android:onClick="onClick"
             android:text="Save Changes"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.86" />
+            app:layout_constraintVertical_bias="0.935" />
 
         <TextView
             android:id="@+id/textView3"
@@ -91,7 +107,7 @@
             app:layout_constraintVertical_bias="0.625" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/companyS"
             android:layout_width="163dp"
             android:layout_height="44dp"
             android:layout_marginStart="8dp"
@@ -101,7 +117,6 @@
             android:backgroundTint="#e4e4e7"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="EMBS Pvt Ltd"
             android:textColor="#111211"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -112,7 +127,7 @@
             app:layout_constraintVertical_bias="0.465" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/emailS"
             android:layout_width="163dp"
             android:layout_height="43dp"
             android:layout_marginTop="8dp"
@@ -120,7 +135,6 @@
             android:backgroundTint="#e4e4e7"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="encore@gmail.com"
             android:textColor="#111211"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -131,7 +145,7 @@
             app:layout_constraintVertical_bias="0.544" />
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/confPwd"
             android:layout_width="178dp"
             android:layout_height="35dp"
             android:layout_marginTop="8dp"
@@ -139,7 +153,24 @@
             android:backgroundTint="#e4e4e7"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="********"
+            android:textColor="#111211"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.918"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.791" />
+
+        <EditText
+            android:id="@+id/pwdS"
+            android:layout_width="178dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="#e4e4e7"
+            android:ems="10"
+            android:inputType="textPersonName"
             android:textColor="#111211"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -150,7 +181,7 @@
             app:layout_constraintVertical_bias="0.716" />
 
         <EditText
-            android:id="@+id/editText5"
+            android:id="@+id/contactS"
             android:layout_width="174dp"
             android:layout_height="39dp"
             android:layout_marginTop="8dp"
@@ -158,7 +189,6 @@
             android:backgroundTint="#e4e4e7"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Encore Events"
             android:textColor="#111211"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"

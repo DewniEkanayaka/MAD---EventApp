@@ -16,8 +16,19 @@ public class ServiceProviderUI extends AppCompatActivity {
 
     public void ViewProfile(View view){
         Intent intent = new Intent(this, UpdateProfile.class);
+
+        ServiceProv sp = (ServiceProv)getIntent().getSerializableExtra("spData");
+        String spID = getIntent().getStringExtra("spID");
+
+        intent.putExtra("spData",sp);
+        intent.putExtra("spID",spID);
+
         startActivity(intent);
+
+
     }
+
+
 
     public void Services(View view){
         Intent intent = new Intent(this, T2.class);

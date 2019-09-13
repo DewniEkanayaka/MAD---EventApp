@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "622951248289",
+    "firebase_url": "https://mad-eventapp.firebaseio.com",
+    "project_id": "mad-eventapp",
+    "storage_bucket": "mad-eventapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:622951248289:android:c2cbe9886063706b251be0",
+        "android_client_info": {
+          "package_name": "com.example.finalevent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "622951248289-02hkdnns1ka7roc14q4p7hg53efnva1u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.finalevent",
+            "certificate_hash": "72f25e574fd4fa086f88a3810560ae0655ce8b75"
+          }
+        },
+        {
+          "client_id": "622951248289-0b6djk8cidrcoeks5ke8qdlavj3q8edq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtUwQaMkulRmlIXANOWugvQ-hSIEUUmJk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "622951248289-0b6djk8cidrcoeks5ke8qdlavj3q8edq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
