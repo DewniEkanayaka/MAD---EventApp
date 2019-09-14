@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class UpdateProfile extends AppCompatActivity {
 
-    EditText companySP, emailSP, unameSP, pwdSP, confirmPwdSP;
+    EditText companySP, emailSP, unameSP, contactSP;
     Button btnUpdate;
     Button btnDelete;
     DatabaseReference dbRef;
@@ -38,10 +38,10 @@ public class UpdateProfile extends AppCompatActivity {
         companySP.setEnabled(false);
         emailSP = findViewById(R.id.emailS);
         emailSP.setEnabled(false);
-        unameSP = findViewById(R.id.contactS);
+        unameSP = findViewById(R.id.unameSh);
         unameSP.setEnabled(false);
-        pwdSP = findViewById(R.id.confPwd);
-        pwdSP.setEnabled(false);
+        contactSP = findViewById(R.id.contactSh);
+        contactSP.setEnabled(false);
 
         btnUpdate = findViewById(R.id.btnSave);
         btnDelete = findViewById(R.id.btnDelete);
@@ -54,7 +54,7 @@ public class UpdateProfile extends AppCompatActivity {
                     companySP.setText(dataSnapshot.child("company").getValue().toString());
                     emailSP.setText(dataSnapshot.child("email").getValue().toString());
                     unameSP.setText(dataSnapshot.child("username").getValue().toString());
-                    pwdSP.setText(dataSnapshot.child("password").getValue().toString());
+                    contactSP.setText(dataSnapshot.child("contactNo").getValue().toString());
                 }
                 else
                     Toast.makeText(getApplicationContext(),"No source to Display",Toast.LENGTH_SHORT).show();
@@ -77,18 +77,10 @@ public class UpdateProfile extends AppCompatActivity {
         startActivity(intent);
     }
 
-//    public void deleteProfile(View view){
-//        ServiceProv sp = (ServiceProv)getIntent().getSerializableExtra("spData");
-//        String spID = getIntent().getStringExtra("spID");
-//        Intent intent = new Intent(this , DeleteUserTR.class);
-//        intent.putExtra("spData",sp);
-//        intent.putExtra("spID",spID);
-//        startActivity(intent);
-//    }
 
     public void DeleteAcc(View view){
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-        alertDialogBuilder.setMessage("Are you sure You wanted to delete your Account?");
+        alertDialogBuilder.setMessage("Are you sure you want to delete your Account?");
                 alertDialogBuilder.setPositiveButton("yes",
                         new DialogInterface.OnClickListener() {
                             @Override

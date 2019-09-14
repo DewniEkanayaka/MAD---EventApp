@@ -19,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class SaveChanges extends AppCompatActivity {
 
-    EditText editCompanyS, editEmailS, editUnameS, editPasswordS, editConfPwdS;
+    EditText editCompanyS, editEmailS, editUnameS, editPasswordS, editConfPwdS, editContactS;
     Button btnSaveChanges;
 
     @Override
@@ -33,8 +33,9 @@ public class SaveChanges extends AppCompatActivity {
 
         editCompanyS = findViewById(R.id.companyS);
         editEmailS = findViewById(R.id.emailS);
-        editUnameS = findViewById(R.id.contactS);
-        editPasswordS = findViewById(R.id.pwdS);
+        editContactS = findViewById(R.id.contactS);
+        editUnameS = findViewById(R.id.unameSh);
+        editPasswordS = findViewById(R.id.contactSh);
         editConfPwdS = findViewById(R.id.confPwd);
         btnSaveChanges = findViewById(R.id.btnSave);
 
@@ -45,6 +46,7 @@ public class SaveChanges extends AppCompatActivity {
                 if (dataSnapshot.hasChildren()) {
                     editCompanyS.setText(dataSnapshot.child("company").getValue().toString());
                     editEmailS.setText(dataSnapshot.child("email").getValue().toString());
+                    editContactS.setText(dataSnapshot.child("contactNo").getValue().toString());
                     editUnameS.setText(dataSnapshot.child("username").getValue().toString());
                     editPasswordS.setText(dataSnapshot.child("password").getValue().toString());
                 }
@@ -78,6 +80,8 @@ public class SaveChanges extends AppCompatActivity {
                                         Toast.makeText(getApplicationContext(),"Please enter the Company Name",Toast.LENGTH_SHORT).show();
                                     else if(TextUtils.isEmpty(editEmailS.getText().toString()))
                                         Toast.makeText(getApplicationContext(),"Please enter Email Address", Toast.LENGTH_SHORT).show();
+                                    else if(TextUtils.isEmpty(editContactS.getText().toString()))
+                                        Toast.makeText(getApplicationContext(),"Please enter Contact Number", Toast.LENGTH_SHORT).show();
                                     else if(TextUtils.isEmpty(editUnameS.getText().toString()))
                                         Toast.makeText(getApplicationContext(),"Please enter a Username",Toast.LENGTH_SHORT).show();
                                     else if(TextUtils.isEmpty(editPasswordS.getText().toString()))
@@ -86,10 +90,31 @@ public class SaveChanges extends AppCompatActivity {
                                         Toast.makeText(getApplicationContext(),"Please confirm the Password",Toast.LENGTH_SHORT).show();
                                         //else if(!emailSP.matches(regex))
 
+                                    if(TextUtils.isEmpty(editCompanyS.getText().toString()))
+                                        Toast.makeText(getApplicationContext(),"Please enter the Company Name",Toast.LENGTH_SHORT).show();
+                                    else if(TextUtils.isEmpty(editEmailS.getText().toString()))
+                                        Toast.makeText(getApplicationContext(),"Please enter Email Address", Toast.LENGTH_SHORT).show();
+                                    else if(!((editEmailS.getText().toString()).matches("\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$")))
+                                        Toast.makeText(getApplicationContext(),"Please enter a valid Email Address", Toast.LENGTH_SHORT).show();
+                                    else if(TextUtils.isEmpty(editContactS.getText().toString()))
+                                        Toast.makeText(getApplicationContext(),"Please enter a Contact Number",Toast.LENGTH_SHORT).show();
+                                    else if(!((editContactS.getText().toString()).length()==10) || (!(editContactS.getText().toString()).matches("^[0-9]+$")))
+                                        Toast.makeText(getApplicationContext(),"Please enter a Valid Contact Number",Toast.LENGTH_SHORT).show();
+                                    else if(TextUtils.isEmpty(editUnameS.getText().toString()))
+                                        Toast.makeText(getApplicationContext(),"Please enter a Username",Toast.LENGTH_SHORT).show();
+                                    else if(TextUtils.isEmpty(editPasswordS.getText().toString()))
+                                        Toast.makeText(getApplicationContext(),"Please enter a Password", Toast.LENGTH_SHORT).show();
+                                    else if(!((editPasswordS.getText().toString()).length()==6))
+                                        Toast.makeText(getApplicationContext(),"Password should be at least 6 characters long", Toast.LENGTH_SHORT).show();
+                                    else if(TextUtils.isEmpty(editConfPwdS.getText().toString()))
+                                        Toast.makeText(getApplicationContext(),"Please confirm the Password",Toast.LENGTH_SHORT).show();
+
+
                                     else {
 
                                         sp.setCompany(editCompanyS.getText().toString().trim());
                                         sp.setEmail(editEmailS.getText().toString().trim());
+                                        sp.setContactNo(Integer.parseInt(editContactS.getText().toString().trim()));
                                         sp.setUsername(editUnameS.getText().toString().trim());
                                         sp.setPassword(editPasswordS.getText().toString().trim());
 
@@ -99,7 +124,7 @@ public class SaveChanges extends AppCompatActivity {
                                         if (confirmpassword.equals(password)) {
                                             DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("ServiceProv").child(spID);
                                             dbRef.setValue(sp);
-                                            Toast.makeText(getApplicationContext(), "Data Updated Successfully", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(getApplicationContext(), "Profile Updated Successfully!", Toast.LENGTH_SHORT).show();
 
 
                                             Intent intent = new Intent(SaveChanges.this, UpdateProfile.class);

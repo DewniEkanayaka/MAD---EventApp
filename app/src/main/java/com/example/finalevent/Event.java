@@ -1,6 +1,8 @@
 package com.example.finalevent;
 
-public class Event {
+import java.io.Serializable;
+
+public class Event implements Serializable {
 
     private String name;
     private String date;

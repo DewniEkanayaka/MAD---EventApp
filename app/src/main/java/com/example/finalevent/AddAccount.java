@@ -16,10 +16,12 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class AddAccount extends AppCompatActivity {
 
-    EditText companySP, emailSP, unameSP, pwdSP, confirmPwdSP;
+    EditText companySP, emailSP, contactSP, unameSP, pwdSP, confirmPwdSP;
     Button btnAdd;
     DatabaseReference dbRef;
     ServiceProv sp;
+
+    //String mailformat = "/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/";
 
     String regex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
 
@@ -28,6 +30,7 @@ public class AddAccount extends AppCompatActivity {
         companySP.setText("");
         emailSP.setText("");
         unameSP.setText("");
+        contactSP.setText("");
         pwdSP.setText("");
         confirmPwdSP.setText("");
     }
@@ -39,9 +42,10 @@ public class AddAccount extends AppCompatActivity {
 
         companySP = findViewById(R.id.companyS);
         emailSP = findViewById(R.id.emailS);
-        unameSP = findViewById(R.id.contactS);
-        pwdSP = findViewById(R.id.confPwd);
-        confirmPwdSP = findViewById(R.id.confirmPwdSP);
+        unameSP = findViewById(R.id.unameS);
+        contactSP = findViewById(R.id.unameSh);
+        pwdSP = findViewById(R.id.contactSh);
+        confirmPwdSP = findViewById(R.id.confPwd);
 
         btnAdd = findViewById(R.id.btnSave);
 
@@ -63,19 +67,27 @@ public class AddAccount extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(),"Please enter the Company Name",Toast.LENGTH_SHORT).show();
                     else if(TextUtils.isEmpty(emailSP.getText().toString()))
                         Toast.makeText(getApplicationContext(),"Please enter Email Address", Toast.LENGTH_SHORT).show();
+                    else if(!((emailSP.getText().toString()).matches("\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$")))
+                         Toast.makeText(getApplicationContext(),"Please enter a valid Email Address", Toast.LENGTH_SHORT).show();
+                    else if(TextUtils.isEmpty(contactSP.getText().toString()))
+                        Toast.makeText(getApplicationContext(),"Please enter a Contact Number",Toast.LENGTH_SHORT).show();
+                    else if(!((contactSP.getText().toString()).length()==10) || (!(contactSP.getText().toString()).matches("^[0-9]+$")))
+                        Toast.makeText(getApplicationContext(),"Please enter a Valid Contact Number",Toast.LENGTH_SHORT).show();
                     else if(TextUtils.isEmpty(unameSP.getText().toString()))
                         Toast.makeText(getApplicationContext(),"Please enter a Username",Toast.LENGTH_SHORT).show();
                     else if(TextUtils.isEmpty(pwdSP.getText().toString()))
                         Toast.makeText(getApplicationContext(),"Please enter a Password", Toast.LENGTH_SHORT).show();
+                    else if(!((pwdSP.getText().toString()).length()==6))
+                        Toast.makeText(getApplicationContext(),"Password should be at least 6 characters long", Toast.LENGTH_SHORT).show();
                     else if(TextUtils.isEmpty(confirmPwdSP.getText().toString()))
                         Toast.makeText(getApplicationContext(),"Please confirm the Password",Toast.LENGTH_SHORT).show();
-                    //else if(!emailSP.matches(regex))
 
                     else {
                         String spID = dbRef.push().getKey();
 
                         sp.setCompany(companySP.getText().toString().trim());
                         sp.setEmail(emailSP.getText().toString().trim());
+                        sp.setContactNo(Integer.parseInt(contactSP.getText().toString().trim()));
                         sp.setUsername(unameSP.getText().toString().trim());
                         sp.setPassword(pwdSP.getText().toString().trim());
 

@@ -14,6 +14,8 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".Main3ActivityS" />
         <activity android:name=".Main2ActivityS" />
+        <activity android:name=".MainActivityS" />
+        <activity android:name=".Main4ActivityS" />
         <activity android:name=".User_TR" />
         <activity android:name=".ProfileUserTR" />
         <activity android:name=".LoginTR" />

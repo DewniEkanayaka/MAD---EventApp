@@ -28,8 +28,8 @@ public class Main4ActivityS extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void onFeedback(View view){
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
+//    public void onFeedback(View view){
+//        Intent intent = new Intent(this, MainActivity.class);
+//        startActivity(intent);
+//    }
 }

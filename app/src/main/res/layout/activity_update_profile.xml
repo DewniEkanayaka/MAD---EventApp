@@ -33,27 +33,27 @@
             android:textColor="#669999"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.179"
+            app:layout_constraintHorizontal_bias="0.165"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.544" />
 
         <TextView
             android:id="@+id/textView8"
-            android:layout_width="117dp"
-            android:layout_height="29dp"
+            android:layout_width="145dp"
+            android:layout_height="45dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:text="PASSWORD"
+            android:text="CONTACT NUMBER"
             android:textColor="#669999"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.161"
+            app:layout_constraintHorizontal_bias="0.188"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.709" />
+            app:layout_constraintVertical_bias="0.726" />
 
         <TextView
             android:id="@+id/textView4"
@@ -143,7 +143,7 @@
             app:layout_constraintVertical_bias="0.544" />
 
         <EditText
-            android:id="@+id/confPwd"
+            android:id="@+id/contactSh"
             android:layout_width="178dp"
             android:layout_height="35dp"
             android:layout_marginTop="8dp"
@@ -161,7 +161,7 @@
             app:layout_constraintVertical_bias="0.716" />
 
         <EditText
-            android:id="@+id/contactS"
+            android:id="@+id/unameSh"
             android:layout_width="174dp"
             android:layout_height="39dp"
             android:layout_marginTop="8dp"
